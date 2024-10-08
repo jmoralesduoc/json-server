@@ -2,97 +2,68 @@
   "usuarios": [
     {
       "id": 1,
-      "nombre": "Juan Pérez",
+      "nombres": "Juan",
+      "apellidos": "Pérez",
       "correo": "juan.perez@example.com",
-      "telefono": "555-1234"
+      
+      "cliente_id": 1
     },
     {
       "id": 2,
-      "nombre": "Maria Garcia",
+      "nombres": "Maria",
+      "apellidos": "Garcia",
       "correo": "maria.garcia@example.com",
-      "telefono": "555-5678"
+      
+      "cliente_id": 2
     }
   ],
-  "access": [
+  "autorizacion": [
     {
       "id": 1,
-      "username": "juanperez",
-      "password": "hashedpassword1",
-      "access_level": 1,
-      "last_login": "2024-09-28T08:30:00"
+      "nombre_autorizacion": "Admin",
+      "accion": "Gestionar Usuarios"
     },
     {
       "id": 2,
-      "username": "mariagarcia",
-      "password": "hashedpassword2",
-      "access_level": 2,
-      "last_login": "2024-09-29T09:45:00"
-    }
-  ],
-  "login": [
-    {
-      "id": 1,
-      "username": "juanperez",
-      "password": "hashedpassword1",
-      "login_attempts": 0,
-      "last_login": "2024-09-28T08:30:00"
+      "nombre_autorizacion": "Editor",
+      "accion": "Editar Proyectos"
     },
     {
-      "id": 2,
-      "username": "mariagarcia",
-      "password": "hashedpassword2",
-      "login_attempts": 1,
-      "last_login": "2024-09-29T09:45:00"
+      "id": 3,
+      "nombre_autorizacion": "Viewer",
+      "accion": "Ver Reportes"
     }
   ],
-  "registro": [
+  "usuario_autorizacion": [
     {
-      "id": 1,
-      "nombre": "Juan Pérez",
-      "correo": "juan.perez@example.com",
-      "telefono": "555-1234",
-      "fecha_registro": "2024-01-10T10:00:00",
-      "estado": true
-    },
-    {
-      "id": 2,
-      "nombre": "Maria Garcia",
-      "correo": "maria.garcia@example.com",
-      "telefono": "555-5678",
-      "fecha_registro": "2024-03-15T12:00:00",
-      "estado": true
-    }
-  ],
-  "contrasena": [
-    {
-      "id": 1,
       "usuario_id": 1,
-      "password_old": "oldpassword1",
-      "password_new": "hashedpassword1",
-      "fecha_cambio": "2024-06-10T11:30:00"
+      "autorizacion_id": 1
     },
     {
-      "id": 2,
       "usuario_id": 2,
-      "password_old": "oldpassword2",
-      "password_new": "hashedpassword2",
-      "fecha_cambio": "2024-07-15T14:00:00"
+      "autorizacion_id": 2
+    },
+    {
+      "usuario_id": 2,
+      "autorizacion_id": 3
     }
   ],
-  "dashboard": [
+  "clientes": [
     {
       "id": 1,
-      "usuario_id": 1,
-      "fecha_ultimo_acceso": "2024-09-28T08:30:00",
-      "proyectos_activos": 2,
-      "reportes_generados": 5
+      "nombre": "Coca Cola Andina",
+      "direccion": "Av. Miraflores 9153 - Renca, Santiago",
+      "telefono": "2222-0001",
+      "correo": "contacto@cocacolaandina.cl",
+      "logo": "assets/img/cocacola.png"
     },
     {
       "id": 2,
-      "usuario_id": 2,
-      "fecha_ultimo_acceso": "2024-09-29T09:45:00",
-      "proyectos_activos": 1,
-      "reportes_generados": 3
+      "nombre": "CCU",
+      "direccion": "Vitacura 2670, Las Condes, Santiago",
+      "telefono": "3333-1111",
+      "correo": "info@ccu.cl",
+      "logo": "assets/img/ccu.png"
     }
   ],
   "proyectos": [
@@ -117,7 +88,7 @@
       "cliente_id": 2
     }
   ],
-  "detalleProyectos": [
+  "tareas": [
     {
       "id": 1,
       "proyecto_id": 1,
@@ -137,82 +108,6 @@
       "fecha_inicio": "2024-05-12T09:00:00",
       "fecha_fin": null,
       "estado": "En progreso"
-    }
-  ],
-  "perfilUsuario": [
-    {
-      "id": 1,
-      "usuario_id": 1,
-      "nombre": "Juan Pérez",
-      "correo": "juan.perez@example.com",
-      "telefono": "555-1234",
-      "direccion": "Calle Falsa 123"
-    },
-    {
-      "id": 2,
-      "usuario_id": 2,
-      "nombre": "Maria Garcia",
-      "correo": "maria.garcia@example.com",
-      "telefono": "555-5678",
-      "direccion": "Avenida Siempre Viva 742"
-    }
-  ],
-  "configuracion": [
-    {
-      "id": 1,
-      "usuario_id": 1,
-      "opcion": "tema",
-      "valor": "oscuro"
-    },
-    {
-      "id": 2,
-      "usuario_id": 1,
-      "opcion": "notificaciones",
-      "valor": "activado"
-    },
-    {
-      "id": 3,
-      "usuario_id": 2,
-      "opcion": "tema",
-      "valor": "claro"
-    }
-  ],
-  "reportes": [
-    {
-      "id": 1,
-      "usuario_id": 1,
-      "nombre_reporte": "Reporte de Actividades",
-      "descripcion": "Informe semanal de actividades realizadas.",
-      "fecha_generacion": "2024-09-25T10:00:00",
-      "tipo": "Semanal",
-      "estado": "Completado"
-    },
-    {
-      "id": 2,
-      "usuario_id": 2,
-      "nombre_reporte": "Reporte de Proyectos",
-      "descripcion": "Informe sobre el estado de los proyectos asignados.",
-      "fecha_generacion": "2024-09-26T12:00:00",
-      "tipo": "Mensual",
-      "estado": "En progreso"
-    }
-  ],
-  "clientes": [
-    {
-      "id": 1,
-      "nombre": "Biblioteca Nacional",
-      "direccion": "Av. Libertador Bernardo O'Higgins 651, Santiago",
-      "telefono": "2222-0001",
-      "correo": "contacto@bibliotecanacional.cl",
-      "Logo": "assets/img/cocacola.png"
-    },
-    {
-      "id": 2,
-      "nombre": "Empresa de Inventarios SA",
-      "direccion": "Calle del Comercio 1234, Santiago",
-      "telefono": "3333-1111",
-      "correo": "info@inventarios-sa.cl",
-      "Logo": "assets/img/ccu.png"
     }
   ]
 }
